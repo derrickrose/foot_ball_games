@@ -2,36 +2,36 @@ from pyspark import Row
 
 
 def get_date(row: Row) -> str:
-    row.__getattribute__("date")
+    return row.__getitem__("date")
 
 
 def get_home_team(row: Row) -> str:
-    row.__getattribute__("home_team")
+    return row.__getitem__("home_team")
 
 
 def get_away_team(row: Row) -> str:
-    row.__getattribute__("away_team")
+    return row.__getitem__("away_team")
 
 
 def get_home_score(row: Row) -> int:
-    row.__getattribute__("home_score")
+    return row.__getitem__("home_score")
 
 
 def get_away_score(row: Row) -> int:
-    row.__getattribute__("away_score")
+    return row.__getitem__("away_score")
 
 
 def get_tournament(row: Row) -> str:
-    row.__getattribute__("tournament")
+    return row.__getitem__("tournament")
 
 
 def get_city(row: Row) -> str:
-    row.__getattribute__("city")
+    return row.__getitem__("city")
 
 
 def get_country(row: Row) -> str:
-    row.__getattribute__("country")
+    return row.__getitem__("country")
 
 
 def get_neutral(row: Row) -> bool:
-    row.__getattribute__("neutral")
+    return row.__getitem__("neutral")
