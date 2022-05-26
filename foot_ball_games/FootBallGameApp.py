@@ -7,8 +7,9 @@ import Schemas
 SEPARATOR = os.path.sep
 
 if __name__ == "__main__":
-    spark_session = SparkSession.builder.appName("foot-ball-games").master(
-        "local").getOrCreate()
+    spark_session = SparkSession.builder.appName("foot-ball-games") \
+        .master("local") \
+        .getOrCreate()
 
     foot_ball_games_DF = spark_session.read.schema(Schemas.FootBallGame.schema) \
         .option("mode", "permissive") \
