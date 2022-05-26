@@ -43,5 +43,6 @@ class OutputCountryGame(object):
     schema = StructType(
         [_date, _team_score, _team, _opponent, _opponent_score, _at_home, _tournament, _city, _country, _is_neutral])
 
+    # the same result wherever which one we might have choosen structtype or list
     schema_list = ["date", "team_score", "team", "opponent", "opponent_score", "at_home", "tournament", "city",
                    "country", "is_neutral"]
