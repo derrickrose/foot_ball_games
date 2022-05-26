@@ -1,8 +1,8 @@
 import os.path
+import sys
 
 from pyspark.sql import SparkSession, DataFrame
 
-import Conf
 import Schemas
 from Conf import from_spark_submit
 
@@ -12,7 +12,7 @@ from OutputMapper import to_output_game_result
 SEPARATOR = os.path.sep
 
 if __name__ == "__main__":
-    conf: Conf.Configuration = from_spark_submit()
+    conf = from_spark_submit(sys.argv)
 
     spark_session: SparkSession = SparkSession.builder.appName("foot-ball-games") \
         .master("local") \
@@ -26,4 +26,5 @@ if __name__ == "__main__":
         .filter(filter_by_year(conf.year)).rdd.map(lambda row: to_output_game_result(row, conf.selected_country)) \
         .toDF(Schemas.OutputCountryGame.schema_list)
 
-    selected_country_games_DF.write.mode("overwrite").json(f"..{SEPARATOR}files{SEPARATOR}result{SEPARATOR}")
+    selected_country_games_DF.write.mode("overwrite").json(
+        f"..{SEPARATOR}files{SEPARATOR}result{SEPARATOR}{conf.extension}{SEPARATOR}{conf.year}")
