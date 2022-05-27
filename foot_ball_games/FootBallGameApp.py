@@ -12,6 +12,8 @@ from OutputMapper import to_output_game_result
 SEPARATOR = os.path.sep
 
 if __name__ == "__main__":
+    # test = ["0", "Mexico", "MX", "2000"]
+    # conf = from_spark_submit(test)
     conf = from_spark_submit(sys.argv)
 
     spark_session: SparkSession = SparkSession.builder.appName("foot-ball-games") \
