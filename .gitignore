@@ -2,3 +2,4 @@ files/result/*
 .idea/*
 *.pyc
 pyspark/
+*.pyc
