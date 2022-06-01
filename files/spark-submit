@@ -7,14 +7,12 @@
 --driver-memory 1g
 --executor-cores 3
 --executor-memory 9g
---class org.review.big_data_aws_demo.SoccerGamesFiltering
+--py-files s3://dev-izybe-bucket/to_add_in_python_path.zip
 
-s3://dev01-big-data-aws-demo/jar-files/big-data-aws-demo-jar-with-dependencies.jar
+s3://dev-izybe-bucket/FootBallGameApp.py
 
-s3://dev01-big-data-aws-demo/input
+s3://dev-izybe-bucket/files/
+s3://dev-izybe-bucket/files/result/
+Mexico
 MX
-s3://dev01-big-data-aws-demo/output
-2019
-
-
- python3 -m FootBallGameApp Mexico 2001 MX
+2000

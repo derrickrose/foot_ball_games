@@ -3,3 +3,4 @@ files/result/*
 *.pyc
 pyspark/
 *.pyc
+foot_ball_games/pyspark_venv/*
